@@ -8,13 +8,12 @@ import Api from './api/Api';
 
 function App() {
   const [data, setData] = useState([]),
-    [selectedItem, setSelectedItem] = useState({});
+    [selectedItem, setSelectedItem] = useState({}),
+    [isLoader, setIsLoader] = useState(false),
+    [isAsking, setIsAsking] = useState(true);
 
   useEffect(() => {
-    (async () => {
-      let data = await Api.getSmallData();
-      setData(data);
-    })();
+    
   }, []);
 
   const contentSelectCallback = (item) => setSelectedItem(item);
@@ -35,6 +34,38 @@ function App() {
 
 
     return blocks;
+  }
+
+  let askAction = (type) => {
+    setIsAsking(false);
+    setIsLoader(true);
+    (async () => {
+      let data = [];
+      if (type === 'high') {
+        data = await Api.getLargeData();
+      } else {
+        data = await Api.getSmallData();
+      }
+      setData(data);
+      setIsLoader(false);
+    })();
+  }
+
+  if (isAsking) {
+    return (
+      <div className={'ask-block'}>
+        <button onClick={() => askAction('low')}>Маленький объем данных</button>
+        <button onClick={() => askAction('high')}>Большой объем данных</button>
+      </div>
+    );
+  }
+  
+  if (isLoader) {
+    return (
+      <div style={{ display: 'flex', width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
+        загрузка...
+      </div>
+    );
   }
 
   return (

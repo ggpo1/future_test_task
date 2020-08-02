@@ -14,7 +14,7 @@ export default class GridViewHeader extends Component {
     }
 
     render() {
-        const { headers, sortAction, sortingKey, sortingMode } = this.state;
+        const { headers, sortAction, sortingKey, sortingMode, filterInputChange, filterAction } = this.state;
         // console.log(headers);
 
         let headersEls = [];
@@ -43,8 +43,8 @@ export default class GridViewHeader extends Component {
                     {headersEls}
                 </div>
                 <div className={'header-search-controls'}>
-                    <input type="text" />
-                    <button>Найти</button>
+                    <input onChange={(e) => filterInputChange(e.target.value)} type="text" />
+                    <button onClick={filterAction}>Найти</button>
                 </div>
                 
 

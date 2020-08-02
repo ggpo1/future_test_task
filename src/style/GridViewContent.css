@@ -30,6 +30,10 @@
     margin-top: 5px
 }
 
+.content > input {
+    height: 5%;
+}
+
 .content-cell {
     display: flex;
     width: 10%;
