@@ -1,0 +1,29 @@
+.content-viewer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    font-size: 11pt;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.content-viewer-row {
+    display: flex;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.content-viewer-row-column {
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+    height: auto;
+}
+
+.content-viewer-row-column > textarea {
+    width: 20%;
+    height: 100px;
+}

@@ -1,0 +1,24 @@
+.grid-view-paginator-container {
+    display: flex;
+    height: 7%;
+    background: #09171c;
+    font-size: 12pt;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.paginator-controls {
+    display: flex;
+    width: 20%;
+    height: auto;
+    justify-content: space-between;
+}
+
+.paginator-controls > div {
+    display: flex;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    user-select: none;
+}

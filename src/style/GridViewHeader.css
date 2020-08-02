@@ -1,17 +1,40 @@
 .header {
     display: flex;
     box-sizing: border-box;
+    flex-direction: column;
     padding: 0 1%;
     width: 100%;
-    height: 7%;
-    background: darkgray;
+    height: 10%;
+    background: #09171c;
     justify-content: space-between;
     align-items: center;
 }
 
 .header-cell {
-    width: 50;
+    display: flex;
+    width: 10%;
+    /* background: blue; */
     height: auto;
     text-align: left;
     font-size: 15pt;
+    cursor: pointer;
+    user-select: none;
+}
+
+.header-search-controls {
+    display: flex;
+    justify-content: center;
+}
+
+.header-search-controls > input {
+    width: 100%;
+}
+
+.headers {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 1%;
+    justify-content: space-between;
+    align-items: center;
 }

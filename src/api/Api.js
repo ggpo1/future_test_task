@@ -5,7 +5,7 @@ export default class Api {
                 method: 'GET',
             }).then((response) => response.json()).then((body) => {
                 resolve(body);
-                console.log(body);
+                // console.log(body);
             }).catch(() => {
                 
             })
@@ -18,7 +18,7 @@ export default class Api {
                 method: 'GET',
             }).then((response) => response.json()).then((body) => {
                 resolve(body);
-                console.log(body);
+                // console.log(body);
             }).catch(() => {
                 
             })

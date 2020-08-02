@@ -1,4 +1,6 @@
 .table {
+    display: flex;
+    flex-direction: column;
     background: grey;
     color: white;
 }
